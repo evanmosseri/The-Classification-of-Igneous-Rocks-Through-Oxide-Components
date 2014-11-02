@@ -14,7 +14,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("SCAM",help="[SIO2,CAO,AL2O3,MGO]",type=str)
 parser.add_argument("-classifier",help="optional: specify classifier file",type=str,default="nearest_neighbors.pkl")
 parser.add_argument("-buffer",help="specify which column your SCAM values starts at (default: 0)",type=int,default=0)
-parser.add_argument("-sheet",help="excel sheet to use (if file is xlsx)",type=str)
+parser.add_argument("-sheet",help="excel sheet to use (required if file is xlsx)",type=str)
 args = parser.parse_args()
 
 rock_types={'DUNITE' :1,'HARZBURGITE':2, 'LHERZOLITE':3, 'WEHRLITE':4}
@@ -41,6 +41,12 @@ elif ".xlsx" in args.SCAM:
 		dataset = args.SCAM[0:-5]
 	else:
 		sys.exit("file does not exist")
+elif ".xls" in args.SCAM:
+	filetype = "xls"
+	if os.path.isfile(args.SCAM):
+		dataset = args.SCAM[0:-5]
+	else:
+		sys.exit("file does not exist")
 elif ("[" in args.SCAM) & ("]" in args.SCAM):
 	test_array = [float(x) for x in args.SCAM.strip()[1:-1].split(',')]
 else:
@@ -56,6 +62,8 @@ if dataset != None:
 		dataframe = pd.read_csv(dataset+".csv")
 	elif filetype == "xlsx":
 		dataframe = pd.read_excel(dataset+".xlsx", args.sheet, index_col=None, na_values=['NA'])
+	elif filetype == "xls":
+		dataframe = pd.read_excel(dataset+".xlsx", args.sheet, index_col=None, na_values=['NA'])
 	vals = dataframe[dataframe.columns[0+args.buffer:4+args.buffer]].values.tolist()
 	prediction = list_to_rocks(classifier.predict(vals))
 	dataframe['Classification'] = [x.title() for x in prediction]
@@ -63,6 +71,8 @@ if dataset != None:
 		dataframe.to_csv(dataset+"_classified.csv")
 	elif filetype == "xlsx":
 		dataframe.to_excel(dataset+"_classified.xlsx",args.sheet)
+	elif filetype == "xls":
+		dataframe.to_excel(dataset+"_classified.xls",args.sheet)
 
 
 
