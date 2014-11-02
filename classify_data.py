@@ -39,5 +39,5 @@ if dataset != None:
 	dataframe = pd.read_csv(dataset+".csv")
 	vals = dataframe[dataframe.columns[0:4]].values.tolist()
 	prediction = list_to_rocks(classifier.predict(vals))
-	dataframe[len(dataframe)] = prediction 
+	dataframe['Classification'] = [x.title() for x in prediction]
 	dataframe.to_csv(dataset+"_classified.csv")
