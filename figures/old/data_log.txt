@@ -1,0 +1,71 @@
+['SIO2', 'CAO', 'AL2O3', 'MGO']
+Nearest Neighbors
+Pure Accuracy: 79.4%
+             precision    recall  f1-score   support
+
+     DUNITE       0.65      0.75      0.70        32
+HARZBURGITE       0.77      0.76      0.76       143
+ LHERZOLITE       0.86      0.84      0.85       242
+   WEHRLITE       0.42      0.53      0.47        15
+
+avg / total       0.80      0.79      0.80       432
+[[ 24   8   3   2]
+ [  7 108  25   0]
+ [  1  27 203   5]
+ [  0   0  11   8]]
+Random Forest
+Pure Accuracy: 75.9%
+             precision    recall  f1-score   support
+
+     DUNITE       0.70      0.65      0.68        40
+HARZBURGITE       0.76      0.71      0.73       150
+ LHERZOLITE       0.80      0.83      0.81       227
+   WEHRLITE       0.42      0.53      0.47        15
+
+avg / total       0.76      0.76      0.76       432
+[[ 26   7   3   1]
+ [  9 106  25   0]
+ [  5  37 188   6]
+ [  0   0  11   8]]
+Naive Base
+Pure Accuracy: 70.6%
+             precision    recall  f1-score   support
+
+     DUNITE       0.27      0.56      0.36        18
+HARZBURGITE       0.87      0.59      0.70       208
+ LHERZOLITE       0.71      0.89      0.79       188
+   WEHRLITE       0.32      0.33      0.32        18
+
+avg / total       0.75      0.71      0.71       432
+[[ 10  23   2   2]
+ [  7 122   9   2]
+ [  0  61 167   8]
+ [  1   2  10   6]]
+ADA Boost
+Pure Accuracy: 78.2%
+             precision    recall  f1-score   support
+
+     DUNITE       0.70      0.63      0.67        41
+HARZBURGITE       0.75      0.73      0.74       143
+ LHERZOLITE       0.83      0.88      0.85       223
+   WEHRLITE       0.58      0.44      0.50        25
+
+avg / total       0.78      0.78      0.78       432
+[[ 26   8   1   2]
+ [ 13 105  20   2]
+ [  1  29 196  10]
+ [  1   1   6  11]]
+Decision Tree
+Pure Accuracy: 78.9%
+             precision    recall  f1-score   support
+
+     DUNITE       0.51      0.86      0.64        22
+HARZBURGITE       0.78      0.72      0.75       151
+ LHERZOLITE       0.86      0.84      0.85       241
+   WEHRLITE       0.58      0.61      0.59        18
+
+avg / total       0.80      0.79      0.79       432
+[[ 19  15   2   1]
+ [  2 109  29   0]
+ [  1  27 202   6]
+ [  0   0   8  11]]
