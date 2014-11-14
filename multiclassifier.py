@@ -13,7 +13,9 @@ __author__ = "Evan Mosseri"
 
 """
 	TODO:
+		- change plot and save options to just save option
 		- merge plotAnalysis and plotAnalysisPCA
+
 """
 
 from StringIO import StringIO
@@ -83,7 +85,7 @@ class RockClassifier:
 
 	@staticmethod
 	def file_acronym(filename):
-		os.path.basename(filename)[0:0 - len(os.path.splitext(filename)[1])]
+		return os.path.basename(filename)[0:0 - len(os.path.splitext(filename)[1])]
 
 	def s_k_fold(self, feature_mat, ylabels, n_folds=4):
 		train, test = iter(StratifiedKFold(ylabels, n_folds=n_folds)).next()
@@ -135,7 +137,7 @@ class RockClassifier:
 				except:
 					y_confidence = []
 				pure_accuracy_rate = len([y_pred[x] for x in range(len(y_pred)) if y_pred[
-										 x] == self.test_labels[x]]) / float(len(self.test_labels))
+					x] == self.test_labels[x]]) / float(len(self.test_labels))
 				report = classification_report(
 					y_pred, self.test_labels, target_names=target_names)
 				cm = confusion_matrix(self.test_labels, y_pred)
@@ -250,7 +252,7 @@ class RockClassifier:
 				x1, y1, z1 = [raw_data_reduced[:, x]
 							  for x in range(len(raw_data_reduced[0]))]
 				r_samples = np.array([[np.array([x1[i], y1[i], z1[i], test_labels[i], y_pred[
-									 i]]) for i in range(len(test_labels)) if test_labels[i] == c] for c in range(0, 4)])
+					i]]) for i in range(len(test_labels)) if test_labels[i] == c] for c in range(0, 4)])
 				hit_shapes = {True: "*", False: "o"}
 				hit_mat = [y_pred[i] == test_labels[i]
 						   for i in range(len(test_labels))]
@@ -343,7 +345,7 @@ class RockClassifier:
 			figlegend = pylab.figure(figsize=(3, 2))
 			ax = fig.add_subplot(111)
 			figlegend.legend(proxy_labels, [
-							 'Incorrectly Classified', 'Correctly Classified'] + self.rock_names.tolist(), numpoints=1)
+				'Incorrectly Classified', 'Correctly Classified'] + self.rock_names.tolist(), numpoints=1)
 			figlegend.savefig(filename)
 
 		def get_avg_performance(self, key="accuracy"):
@@ -351,7 +353,7 @@ class RockClassifier:
 			for i in self.results:
 				su.append(i[key])
 			try:
-				return float(np.sum(su)) / len(self.results),self
+				return float(np.sum(su)) / len(self.results), self
 			except:
 				return su
 
@@ -362,9 +364,8 @@ class RockClassifier:
 			reverse = kwargs.get("reverse", False)
 			save = kwargs.get("save", False)
 			filename = kwargs.get("filename", "classifier_comparison.txt")
-
 			results = sorted(self.results, key=lambda x: x[
-							 "accuracy"], reverse=reverse) if sort else self.results
+				"accuracy"], reverse=reverse) if sort else self.results
 			if p:
 				for i in results:
 					if arglen > 0:
@@ -378,7 +379,7 @@ class RockClassifier:
 				for i in results:
 					handle.write("{}\n{}\n{}{}".format(
 						i["classifier_name"], i["accuracy"], i["report"], "\n" * 5))
-			return np.array(results) if arglen < 1 else np.array([[i[x] for x in args] for i in results]) if all([key in results[0] for key in args]) else "Invalid Key",self
+			return np.array(results) if arglen < 1 else np.array([[i[x] for x in args] for i in results]) if all([key in results[0] for key in args]) else "Invalid Key", self
 
 
 def main():
@@ -387,4 +388,3 @@ def main():
 
 if __name__ == "__main__":
 	main()
-
