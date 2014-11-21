@@ -1,0 +1,240 @@
+RandomForestClassifier
+0.790598290598
+             precision    recall  f1-score   support
+
+     DUNITE       0.74      0.80      0.77        69
+HARZBURGITE       0.75      0.74      0.74        65
+ LHERZOLITE       0.83      0.83      0.83        60
+   WEHRLITE       0.89      0.80      0.84        40
+
+avg / total       0.79      0.79      0.79       234
+
+
+
+
+
+ExtraTreesClassifier
+0.790598290598
+             precision    recall  f1-score   support
+
+     DUNITE       0.74      0.77      0.76        71
+HARZBURGITE       0.73      0.81      0.77        58
+ LHERZOLITE       0.85      0.84      0.84        61
+   WEHRLITE       0.89      0.73      0.80        44
+
+avg / total       0.80      0.79      0.79       234
+
+
+
+
+
+GradientBoostingClassifier
+0.786324786325
+             precision    recall  f1-score   support
+
+     DUNITE       0.66      0.82      0.73        60
+HARZBURGITE       0.80      0.76      0.78        67
+ LHERZOLITE       0.90      0.79      0.84        68
+   WEHRLITE       0.83      0.77      0.80        39
+
+avg / total       0.80      0.79      0.79       234
+
+
+
+
+
+KNeighborsClassifier
+0.760683760684
+             precision    recall  f1-score   support
+
+     DUNITE       0.69      0.74      0.71        69
+HARZBURGITE       0.73      0.80      0.76        59
+ LHERZOLITE       0.85      0.76      0.80        67
+   WEHRLITE       0.81      0.74      0.77        39
+
+avg / total       0.77      0.76      0.76       234
+
+
+
+
+
+DecisionTreeClassifier
+0.75641025641
+             precision    recall  f1-score   support
+
+     DUNITE       0.68      0.76      0.71        66
+HARZBURGITE       0.73      0.71      0.72        66
+ LHERZOLITE       0.83      0.83      0.83        60
+   WEHRLITE       0.83      0.71      0.77        42
+
+avg / total       0.76      0.76      0.76       234
+
+
+
+
+
+SVC
+0.74358974359
+             precision    recall  f1-score   support
+
+     DUNITE       0.78      0.66      0.72        88
+HARZBURGITE       0.77      0.79      0.78        62
+ LHERZOLITE       0.68      0.87      0.77        47
+   WEHRLITE       0.72      0.70      0.71        37
+
+avg / total       0.75      0.74      0.74       234
+
+
+
+
+
+LogisticRegression
+0.688034188034
+             precision    recall  f1-score   support
+
+     DUNITE       0.59      0.62      0.61        71
+HARZBURGITE       0.84      0.68      0.76        79
+ LHERZOLITE       0.65      0.78      0.71        50
+   WEHRLITE       0.67      0.71      0.69        34
+
+avg / total       0.70      0.69      0.69       234
+
+
+
+
+
+RidgeClassifier
+0.67094017094
+             precision    recall  f1-score   support
+
+     DUNITE       0.61      0.63      0.62        71
+HARZBURGITE       0.75      0.71      0.73        68
+ LHERZOLITE       0.73      0.70      0.72        63
+   WEHRLITE       0.56      0.62      0.59        32
+
+avg / total       0.68      0.67      0.67       234
+
+
+
+
+
+AdaBoostClassifier
+0.662393162393
+             precision    recall  f1-score   support
+
+     DUNITE       0.69      0.62      0.65        82
+HARZBURGITE       0.58      0.70      0.63        53
+ LHERZOLITE       0.68      0.68      0.68        60
+   WEHRLITE       0.72      0.67      0.69        39
+
+avg / total       0.67      0.66      0.66       234
+
+
+
+
+
+LDA
+0.645299145299
+             precision    recall  f1-score   support
+
+     DUNITE       0.45      0.62      0.52        53
+HARZBURGITE       0.73      0.64      0.69        73
+ LHERZOLITE       0.77      0.70      0.73        66
+   WEHRLITE       0.69      0.60      0.64        42
+
+avg / total       0.67      0.65      0.65       234
+
+
+
+
+
+SVC
+0.615384615385
+             precision    recall  f1-score   support
+
+     DUNITE       0.84      0.45      0.58       138
+HARZBURGITE       0.56      0.78      0.65        46
+ LHERZOLITE       0.67      0.95      0.78        42
+   WEHRLITE       0.17      0.75      0.27         8
+
+avg / total       0.73      0.62      0.62       234
+
+
+
+
+
+QDA
+0.551282051282
+             precision    recall  f1-score   support
+
+     DUNITE       0.19      0.44      0.26        32
+HARZBURGITE       0.92      0.48      0.63       122
+ LHERZOLITE       0.48      0.72      0.58        40
+   WEHRLITE       0.75      0.68      0.71        40
+
+avg / total       0.72      0.55      0.59       234
+
+
+
+
+
+GaussianNB
+0.534188034188
+             precision    recall  f1-score   support
+
+     DUNITE       0.18      0.48      0.26        27
+HARZBURGITE       0.94      0.44      0.60       137
+ LHERZOLITE       0.40      0.75      0.52        32
+   WEHRLITE       0.78      0.74      0.76        38
+
+avg / total       0.75      0.53      0.57       234
+
+
+
+
+
+MultinomialNB
+0.401709401709
+             precision    recall  f1-score   support
+
+     DUNITE       0.07      0.10      0.08        48
+HARZBURGITE       0.92      0.47      0.62       125
+ LHERZOLITE       0.12      0.39      0.18        18
+   WEHRLITE       0.64      0.53      0.58        43
+
+avg / total       0.63      0.40      0.47       234
+
+
+
+
+
+SGDClassifier
+0.290598290598
+             precision    recall  f1-score   support
+
+     DUNITE       0.01      1.00      0.03         1
+HARZBURGITE       0.02      1.00      0.03         1
+ LHERZOLITE       1.00      0.27      0.42       224
+   WEHRLITE       0.17      0.75      0.27         8
+
+avg / total       0.96      0.29      0.41       234
+
+
+
+
+
+PassiveAggressiveClassifier
+0.282051282051
+             precision    recall  f1-score   support
+
+     DUNITE       0.01      1.00      0.03         1
+HARZBURGITE       0.00      0.00      0.00         0
+ LHERZOLITE       1.00      0.26      0.42       227
+   WEHRLITE       0.14      0.83      0.24         6
+
+avg / total       0.97      0.28      0.41       234
+
+
+
+
+
