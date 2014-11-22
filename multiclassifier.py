@@ -384,7 +384,7 @@ class RockClassifier:
 
 def main():
 	RockClassifier.feed("./data/STAMCM.csv").classify().get_results(p=True)
-
+	# RockClassifier.feed("./data/new_STAMCM.csv").classify().get_results(p=True)
 
 if __name__ == "__main__":
 	main()
