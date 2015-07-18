@@ -25,6 +25,10 @@ import os
 from pprint import pprint
 import sys
 import time
+# import Tkinter
+# import ttk
+
+
 import matplotlib
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
@@ -32,9 +36,8 @@ import mpld3
 import numpy as np
 import pandas as pd
 from pydot import graph_from_dot_data
-import scipy as st
 import pylab
-
+import scipy as st
 from sklearn import cross_validation
 from sklearn.cluster import KMeans
 from sklearn.cross_validation import StratifiedKFold
@@ -54,8 +57,8 @@ from sklearn.tree import DecisionTreeClassifier
 import sklearn.tree as tree
 
 
-class RockClassifier:
 
+class RockClassifier:
 	@staticmethod
 	def numbered_labels(labels, key):
 		return [key[labels[i]] for i in range(len(labels))]
@@ -383,8 +386,16 @@ class RockClassifier:
 
 
 def main():
-# 	RockClassifier.feed("./data/STAMCM.csv").classify().get_results(p=True)
-	RockClassifier.feed("./data/new_STAMCM.csv").classify().get_results(p=True)
+	# RockClassifier.feed("./data/STAMCM.csv").classify().get_results(p=True)
+	# RockClassifier.feed("./data/new_STAMCM.csv").classify().get_results(p=True)
 
+	# print np.unique(pd.read_csv("./data/languages.csv")["Language"].values)
+
+	# RockClassifier.feed("./data/languages.csv").classify(target_names=np.unique(pd.read_csv("./data/languages.csv")["Language"].values)).get_results(p=True)
+
+
+	
+	# print RockClassifier.numbered_labels(label, RockClassifier.classify.rock_types)
+	pass
 if __name__ == "__main__":
 	main()
